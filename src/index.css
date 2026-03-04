@@ -1,0 +1,280 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body { @apply bg-white text-charcoal font-sans antialiased; }
+  html { scroll-behavior: smooth; }
+  ::selection { @apply bg-copper/20 text-charcoal; }
+}
+
+@layer components {
+
+  /* ── Scroll reveal ── */
+  .reveal {
+    opacity: 0; transform: translateY(24px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+
+  /* ── Stagger cards (section 3) ── */
+  .stagger-item {
+    opacity: 0; transform: translateY(32px);
+    transition: opacity 0.65s ease-out, transform 0.65s ease-out;
+  }
+  .stagger-item.stagger-visible { opacity: 1; transform: translateY(0); }
+
+  /* ── Ligne animée qui se dessine ── */
+  .line-draw {
+    transform-origin: left center;
+    transform: scaleX(0);
+    transition: transform 0.9s cubic-bezier(0.4, 0, 0.2, 1) 0.5s;
+  }
+  .reveal.visible .line-draw { transform: scaleX(1); }
+
+  /* ── Logo apparition au chargement ── */
+  .logo-appear {
+    animation: logoAppear 1.3s cubic-bezier(0.34, 1.4, 0.64, 1) 0.2s both;
+  }
+
+  /* ── Ken Burns — zoom lent infini ── */
+  .ken-burns {
+    animation: kenBurns 18s ease-in-out infinite alternate;
+    will-change: transform;
+  }
+
+  /* ── Feuilles SVG flottantes ── */
+  .leaf-float-1 { animation: leafFloat 9s ease-in-out infinite; }
+  .leaf-float-2 { animation: leafFloat 12s ease-in-out infinite 2.5s; }
+  .leaf-float-3 { animation: leafFloat 10s ease-in-out infinite 1s; }
+  .leaf-float-4 { animation: leafFloat 14s ease-in-out infinite 4s; }
+  .leaf-float-5 { animation: leafFloat 8s ease-in-out infinite 3s; }
+
+  /* ── Card lift (section 3) ── */
+  .card-lift {
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+  }
+  .card-lift:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 24px 48px -10px rgba(0, 0, 0, 0.22);
+  }
+
+  /* ── Image saturation au hover ── */
+  .card-lift .card-img {
+    transition: filter 0.45s ease, transform 0.55s ease;
+    filter: saturate(0.85) brightness(0.97);
+  }
+  .card-lift:hover .card-img {
+    filter: saturate(1.25) brightness(1.02);
+    transform: scale(1.06);
+  }
+
+  /* ── Icone micro-mouvement ── */
+  .icon-micro {
+    display: inline-block;
+    transition: color 0.3s ease;
+  }
+  .card-lift:hover .icon-micro {
+    animation: iconMicro 0.55s ease forwards;
+  }
+
+  /* ── Gradient text ── */
+  .gradient-text {
+    background: linear-gradient(135deg, #A65A2E 0%, #1F6A73 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* ── Nav link underline ── */
+  .nav-link { position: relative; }
+  .nav-link::after {
+    content: ''; position: absolute; bottom: -3px; left: 0;
+    width: 0; height: 1px; background-color: #A65A2E; transition: width 0.3s ease;
+  }
+  .nav-link:hover::after, .nav-link.active-link::after { width: 100%; }
+
+  /* ── Btn shimmer ── */
+  .btn-shimmer { position: relative; overflow: hidden; }
+  .btn-shimmer::after {
+    content: ''; position: absolute; top: 0; left: -100%;
+    width: 55%; height: 100%;
+    background: linear-gradient(to right, transparent, rgba(255,255,255,0.12), transparent);
+  }
+  .btn-shimmer:hover::after { animation: shimmer 0.55s ease forwards; }
+
+  /* ── Card hover (générique) ── */
+  .card-hover {
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  .card-hover:hover {
+    box-shadow: 0 8px 32px -4px rgba(166, 90, 46, 0.20);
+    transform: translateY(-2px);
+  }
+}
+
+  /* ── Ligne hero (trigger au mount, pas au scroll) ── */
+  .line-hero-draw {
+    transform-origin: left center;
+    animation: drawLineHero 0.9s cubic-bezier(0.4, 0, 0.2, 1) 0.9s both;
+  }
+
+  /* ── CTA glow copper ── */
+  .btn-glow-copper {
+    transition: box-shadow 0.4s ease, background-color 0.3s ease, transform 0.2s ease;
+  }
+  .btn-glow-copper:hover {
+    box-shadow: 0 0 22px 5px rgba(166,90,46,0.28), 0 0 50px 12px rgba(166,90,46,0.10);
+    transform: translateY(-1px);
+  }
+
+/* ── Bouton crème pulse + glow (section 6) ── */
+.btn-cream-pulse {
+  animation: btnPulse 3.5s ease-in-out infinite;
+  transition: box-shadow 0.4s ease;
+}
+.btn-cream-pulse:hover {
+  box-shadow: 0 0 28px 6px rgba(248,246,243,0.22), 0 0 60px 16px rgba(248,246,243,0.07);
+  animation-play-state: paused;
+}
+
+/* ── Vidéo slow-mo simulée (section 6) ── */
+.video-slowmo {
+  animation: videoSlowmo 22s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+/* ── Grain texture (section 5) ── */
+.grain-bg {
+  position: relative;
+}
+.grain-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.78' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.038;
+  pointer-events: none;
+  z-index: 1;
+}
+.grain-bg > * { position: relative; z-index: 2; }
+
+/* ── Star pop (section 5) ── */
+.star-pop {
+  animation: starPop 0.45s ease forwards;
+}
+
+/* ── Keyframes ── */
+@keyframes logoAppear {
+  0%   { opacity: 0; transform: rotate(3deg) translateY(12px) scale(0.95); }
+  70%  { opacity: 1; transform: rotate(-0.5deg) translateY(-2px) scale(1.01); }
+  100% { opacity: 1; transform: rotate(0deg) translateY(0) scale(1); }
+}
+
+@keyframes kenBurns {
+  0%   { transform: scale(1) translate(0%, 0%); }
+  100% { transform: scale(1.09) translate(-1.5%, -1%); }
+}
+
+@keyframes leafFloat {
+  0%,  100% { transform: translateY(0)    rotate(0deg); }
+  33%        { transform: translateY(-14px) rotate(2.5deg); }
+  66%        { transform: translateY(-7px)  rotate(-1.5deg); }
+}
+
+@keyframes iconMicro {
+  0%   { transform: scale(1)    rotate(0deg); }
+  30%  { transform: scale(1.22) rotate(-8deg); }
+  65%  { transform: scale(1.1)  rotate(5deg); }
+  100% { transform: scale(1)    rotate(0deg); }
+}
+
+@keyframes btnPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(248,246,243,0.30); }
+  50%       { box-shadow: 0 0 0 16px rgba(248,246,243,0); }
+}
+
+@keyframes videoSlowmo {
+  0%   { transform: scale(1.05) translate(0%, 0%); }
+  100% { transform: scale(1.15) translate(-2%, -1.5%); }
+}
+
+@keyframes starPop {
+  0%   { transform: scale(0) rotate(-20deg); opacity: 0; }
+  60%  { transform: scale(1.35) rotate(6deg);  opacity: 1; }
+  100% { transform: scale(1)   rotate(0deg);  opacity: 1; }
+}
+
+@keyframes fadeIn {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes fadeInUp {
+  0%   { opacity: 0; transform: translateY(28px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInDown {
+  0%   { opacity: 0; transform: translateY(-18px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes shimmer {
+  0%   { left: -100%; }
+  100% { left: 150%; }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}
+@keyframes drawLineHero {
+  0%   { transform: scaleX(0); }
+  100% { transform: scaleX(1); }
+}
+
+/* ── Ritual icon — pulse léger au hover carte ── */
+.ritual-card .icon-ritual {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+.ritual-card:hover .icon-ritual {
+  animation: ritualIconPulse 0.6s ease forwards;
+}
+
+@keyframes ritualIconPulse {
+  0%   { transform: scale(1); }
+  35%  { transform: scale(1.22); }
+  65%  { transform: scale(0.93); }
+  100% { transform: scale(1); }
+}
+
+/* ── Cascade text (philosophy section) ── */
+.cascade-item {
+  opacity: 0; transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.cascade-item.cascade-visible { opacity: 1; transform: translateY(0); }
+
+/* ── Lumière ambiante flottante (ExperienceSalon) ── */
+.light-drift {
+  animation: lightDrift 14s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+@keyframes lightDrift {
+  0%, 100% { opacity: 0.07; transform: translate(-25%, 5%) scale(1); }
+  50%       { opacity: 0.13; transform: translate(25%, -5%) scale(1.08); }
+}
+
+/* ── Pulse vert feuille (CTA soins) ── */
+.btn-teal-pulse {
+  animation: tealPulse 3.5s ease-in-out infinite;
+}
+.btn-teal-pulse:hover {
+  box-shadow: 0 0 28px 8px rgba(248,246,243,0.18), 0 0 60px 18px rgba(248,246,243,0.06);
+  animation-play-state: paused;
+}
+@keyframes tealPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(248,246,243,0.28); }
+  50%       { box-shadow: 0 0 0 18px rgba(248,246,243,0); }
+}
