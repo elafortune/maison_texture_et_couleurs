@@ -13,26 +13,16 @@ const navLinks = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
   const { pathname } = useLocation()
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 60)
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
 
   useEffect(() => {
     setOpen(false)
   }, [pathname])
 
-  const isSolid = scrolled || open
-  const isHome  = pathname === '/'
-
   return (
     <nav
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
-        isSolid
+        open
           ? 'bg-onyx/88 backdrop-blur-xl border-b border-stone/10 shadow-lg shadow-onyx/30'
           : 'bg-transparent'
       }`}
@@ -42,7 +32,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link
           to="/"
-          className="font-serif text-lg md:text-xl tracking-[0.15em] text-pearl/90 hover:text-pearl transition-colors"
+          className="font-serif text-lg md:text-xl tracking-[0.15em] text-onyx/90 hover:text-onyx transition-colors"
         >
           Maison Texture<span className="gradient-text mx-1.5">&</span>Couleurs
         </Link>
@@ -53,17 +43,12 @@ export default function Navbar() {
             const isActive = to === '/' ? pathname === '/' : pathname.startsWith(to)
             const isAnchor = to.startsWith('/#')
 
-            const transparentColor = (!isSolid && isHome)
-              ? 'text-charcoal/80 hover:text-copper'
-              : 'text-stone/70 hover:text-pearl'
-            const fontSize = (!isSolid && isHome) ? 'text-[13px]' : 'text-xs'
-
             if (isAnchor) {
               return (
                 <a
                   key={label}
                   href={to}
-                  className={`nav-link font-sans ${fontSize} tracking-[0.18em] uppercase ${transparentColor} transition-colors`}
+                  className="nav-link font-sans text-[13px] tracking-[0.18em] uppercase text-onyx/90 hover:text-copper transition-colors"
                 >
                   {label}
                 </a>
@@ -73,8 +58,8 @@ export default function Navbar() {
               <Link
                 key={label}
                 to={to}
-                className={`nav-link font-sans ${fontSize} tracking-[0.18em] uppercase transition-colors ${
-                  isActive ? 'text-copper active-link' : transparentColor
+                className={`nav-link font-sans text-[13px] tracking-[0.18em] uppercase transition-colors ${
+                  isActive ? 'text-copper active-link' : 'text-onyx/90 hover:text-copper'
                 }`}
               >
                 {label}
@@ -83,24 +68,24 @@ export default function Navbar() {
           })}
 
           {/* Icônes sociales */}
-          <div className="flex items-center gap-4 ml-3 pl-4 border-l border-stone/15">
+          <div className="flex items-center gap-4 ml-3 pl-4 border-l border-onyx/15">
             <a
               href={socialLinks.instagram}
               target="_blank"
               rel="noopener noreferrer"
-              className={`hover:text-copper transition-colors ${(!isSolid && isHome) ? 'text-charcoal/65' : 'text-stone/50'}`}
+              className="text-onyx/75 hover:text-copper transition-colors"
               aria-label="Instagram"
             >
-              <Instagram size={(!isSolid && isHome) ? 19 : 17} />
+              <Instagram size={19} />
             </a>
             <a
               href={socialLinks.tiktok}
               target="_blank"
               rel="noopener noreferrer"
-              className={`hover:text-copper transition-colors ${(!isSolid && isHome) ? 'text-charcoal/65' : 'text-stone/50'}`}
+              className="text-onyx/75 hover:text-copper transition-colors"
               aria-label="TikTok"
             >
-              <TikTokIcon className={(!isSolid && isHome) ? 'w-[19px] h-[19px]' : 'w-[17px] h-[17px]'} />
+              <TikTokIcon className="w-[19px] h-[19px]" />
             </a>
           </div>
 
@@ -119,7 +104,7 @@ export default function Navbar() {
         {/* Toggle mobile */}
         <button
           onClick={() => setOpen(!open)}
-          className="md:hidden text-pearl/80 hover:text-pearl transition-colors"
+          className={`md:hidden transition-colors ${open ? 'text-pearl/80 hover:text-pearl' : 'text-onyx/80 hover:text-onyx'}`}
           aria-label={open ? 'Fermer le menu' : 'Ouvrir le menu'}
         >
           {open ? <X size={22} /> : <Menu size={22} />}
