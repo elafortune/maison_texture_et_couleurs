@@ -24,9 +24,9 @@ export default function Hero() {
         <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-light text-charcoal leading-[1.1] animate-fade-in-up">
           Maison
           <br />
-          <span className="gradient-text">texture</span>
+          <span className="gradient-text">Texture</span>
           <span className="text-charcoal/25 mx-3">&</span>
-          <span className="text-charcoal">couleur</span>
+          <span className="text-charcoal">Couleurs</span>
         </h1>
 
         <div className="mt-8 mb-8 flex items-center justify-center gap-3 animate-fade-in">
@@ -35,7 +35,7 @@ export default function Hero() {
           <div className="w-12 h-px bg-copper/50" />
         </div>
 
-        <p className="font-sans text-sm md:text-base text-charcoal/60 tracking-[0.25em] uppercase animate-fade-in-up">
+        <p className="font-sans text-base md:text-lg text-charcoal/85 tracking-[0.25em] uppercase animate-fade-in-up">
           L&apos;art capillaire sur-mesure
         </p>
 

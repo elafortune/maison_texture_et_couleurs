@@ -27,6 +27,7 @@ export default function Navbar() {
   }, [pathname])
 
   const isSolid = scrolled || open
+  const isHome  = pathname === '/'
 
   return (
     <nav
@@ -43,7 +44,7 @@ export default function Navbar() {
           to="/"
           className="font-serif text-lg md:text-xl tracking-[0.15em] text-pearl/90 hover:text-pearl transition-colors"
         >
-          Maison<span className="gradient-text mx-1.5">&</span>Texture
+          Maison Texture<span className="gradient-text mx-1.5">&</span>Couleurs
         </Link>
 
         {/* Desktop nav */}
@@ -52,12 +53,17 @@ export default function Navbar() {
             const isActive = to === '/' ? pathname === '/' : pathname.startsWith(to)
             const isAnchor = to.startsWith('/#')
 
+            const transparentColor = (!isSolid && isHome)
+              ? 'text-charcoal/80 hover:text-copper'
+              : 'text-stone/70 hover:text-pearl'
+            const fontSize = (!isSolid && isHome) ? 'text-[13px]' : 'text-xs'
+
             if (isAnchor) {
               return (
                 <a
                   key={label}
                   href={to}
-                  className="nav-link font-sans text-xs tracking-[0.18em] uppercase text-stone/70 hover:text-pearl transition-colors"
+                  className={`nav-link font-sans ${fontSize} tracking-[0.18em] uppercase ${transparentColor} transition-colors`}
                 >
                   {label}
                 </a>
@@ -67,8 +73,8 @@ export default function Navbar() {
               <Link
                 key={label}
                 to={to}
-                className={`nav-link font-sans text-xs tracking-[0.18em] uppercase transition-colors ${
-                  isActive ? 'text-copper active-link' : 'text-stone/70 hover:text-pearl'
+                className={`nav-link font-sans ${fontSize} tracking-[0.18em] uppercase transition-colors ${
+                  isActive ? 'text-copper active-link' : transparentColor
                 }`}
               >
                 {label}
@@ -82,19 +88,19 @@ export default function Navbar() {
               href={socialLinks.instagram}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-stone/50 hover:text-copper transition-colors"
+              className={`hover:text-copper transition-colors ${(!isSolid && isHome) ? 'text-charcoal/65' : 'text-stone/50'}`}
               aria-label="Instagram"
             >
-              <Instagram size={17} />
+              <Instagram size={(!isSolid && isHome) ? 19 : 17} />
             </a>
             <a
               href={socialLinks.tiktok}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-stone/50 hover:text-copper transition-colors"
+              className={`hover:text-copper transition-colors ${(!isSolid && isHome) ? 'text-charcoal/65' : 'text-stone/50'}`}
               aria-label="TikTok"
             >
-              <TikTokIcon className="w-[17px] h-[17px]" />
+              <TikTokIcon className={(!isSolid && isHome) ? 'w-[19px] h-[19px]' : 'w-[17px] h-[17px]'} />
             </a>
           </div>
 
