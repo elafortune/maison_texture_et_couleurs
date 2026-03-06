@@ -102,20 +102,15 @@ export default function PrestationSection({ category, reversed = false, bgClass 
               {category.description}
             </p>
 
-            {/* Liste de prestations avec prix */}
+            {/* Liste de prestations */}
             <div ref={itemsRef} className="space-y-0 mb-10 border border-linen/60">
               {category.items.map((item, i) => (
                 <div
                   key={i}
-                  className="stagger-item flex items-start justify-between gap-4 px-5 py-4 border-b border-linen/50 last:border-b-0 bg-white/40 hover:bg-white/70 transition-colors duration-200"
+                  className="stagger-item px-5 py-4 border-b border-linen/50 last:border-b-0 bg-white/40 hover:bg-white/70 transition-colors duration-200"
                 >
-                  <div>
-                    <p className="font-sans text-sm font-medium text-charcoal leading-snug">{item.name}</p>
-                    <p className="font-sans text-xs text-slate/60 mt-0.5 leading-relaxed">{item.description}</p>
-                  </div>
-                  <span className="flex-shrink-0 font-sans text-xs text-copper font-medium mt-0.5 whitespace-nowrap">
-                    {item.price}
-                  </span>
+                  <p className="font-sans text-sm font-medium text-charcoal leading-snug">{item.name}</p>
+                  <p className="font-sans text-xs text-slate/60 mt-0.5 leading-relaxed">{item.description}</p>
                 </div>
               ))}
             </div>

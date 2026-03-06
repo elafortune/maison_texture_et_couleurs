@@ -21,22 +21,18 @@ export const prestationCategories = [
       {
         name: 'Coupe femme',
         description: 'Coupe ciseau ou d\u00e9grad\u00e9, brushing inclus.',
-        price: '\u00c0 partir de 45 \u20ac',
       },
       {
         name: 'Coupe homme',
         description: 'Coupe classique, d\u00e9grad\u00e9 ou coupe tendance.',
-        price: '\u00c0 partir de 25 \u20ac',
       },
       {
         name: 'Coupe enfant (- 12 ans)',
         description: 'Coupe adapt\u00e9e aux plus jeunes.',
-        price: '\u00c0 partir de 18 \u20ac',
       },
       {
         name: 'Frange',
         description: "R\u00e9\u00e9quilibrage ou cr\u00e9ation d'une frange.",
-        price: '\u00c0 partir de 10 \u20ac',
       },
     ],
   },
@@ -54,27 +50,22 @@ export const prestationCategories = [
       {
         name: 'Coloration globale',
         description: 'Couleur pleine sur toute la chevelure.',
-        price: '\u00c0 partir de 60 \u20ac',
       },
       {
         name: 'M\u00e8ches / Balayage',
         description: '\u00c9claircissement partiel ou balayage soleil.',
-        price: '\u00c0 partir de 80 \u20ac',
       },
       {
         name: 'Ombre hair / Tie & dye',
         description: "D\u00e9grad\u00e9 de couleur pour un effet naturel.",
-        price: '\u00c0 partir de 90 \u20ac',
       },
       {
         name: 'Couleur fantaisie',
         description: 'Teintes vives, pastels ou cr\u00e9ations uniques.',
-        price: 'Sur devis',
       },
       {
         name: 'Correction de couleur',
         description: "R\u00e9\u00e9quilibrage ou neutralisation de teinte.",
-        price: 'Sur devis',
       },
     ],
   },
@@ -92,27 +83,22 @@ export const prestationCategories = [
       {
         name: 'Brushing',
         description: 'Lissage ou mise en forme au brushing.',
-        price: '\u00c0 partir de 30 \u20ac',
       },
       {
         name: 'Lissage/Gainage',
         description: 'Coiffage liss\u00e9 \u00e0 la pince ou au lisseur.',
-        price: '\u00c0 partir de 35 \u20ac',
       },
       {
         name: 'Mise en plis / Ondulations',
         description: 'Bigoudis, ondulations naturelles ou waves.',
-        price: '\u00c0 partir de 40 \u20ac',
       },
       {
         name: 'Chignon & coiffures de c\u00e9r\u00e9monie',
         description: "\u00c9labor\u00e9es pour mariages et \u00e9v\u00e9nements.",
-        price: '\u00c0 partir de 70 \u20ac',
       },
       {
         name: 'Tresses & locks',
         description: 'Tresses plaqu\u00e9es, box braids, cornrows et locks.',
-        price: 'Sur devis',
       },
     ],
   },
@@ -130,17 +116,14 @@ export const prestationCategories = [
       {
         name: 'Lissage br\u00e9silien',
         description: "Lissage k\u00e9ratine longue dur\u00e9e pour une brillance et une douceur exceptionnelles.",
-        price: '\u00c0 partir de 150 \u20ac',
       },
       {
         name: 'Permanente',
         description: "Boucles durables ou d\u00e9frisation adapt\u00e9e \u00e0 votre type de cheveux.",
-        price: '\u00c0 partir de 80 \u20ac',
       },
       {
         name: 'Extensions',
         description: "Pose d'extensions \u00e0 k\u00e9ratine, bandes ou tissages.",
-        price: 'Sur devis',
       },
     ],
   },

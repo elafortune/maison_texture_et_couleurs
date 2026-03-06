@@ -2,18 +2,11 @@ import { useState } from 'react'
 import { prestationCategories } from '../../data/salonData'
 import useScrollReveal from '../../hooks/useScrollReveal'
 
-function PrestationCard({ name, description, price }) {
+function PrestationCard({ name, description }) {
   return (
     <div className="card-glow bg-pearl border border-linen p-6 hover:border-copper/30">
-      <div className="flex items-start justify-between gap-4">
-        <div>
-          <h4 className="font-serif text-lg text-charcoal mb-2">{name}</h4>
-          <p className="font-sans text-sm text-slate leading-relaxed">{description}</p>
-        </div>
-        <span className="flex-shrink-0 font-sans text-xs text-terracotta font-medium whitespace-nowrap mt-1 border border-terracotta/20 px-2 py-0.5">
-          {price}
-        </span>
-      </div>
+      <h4 className="font-serif text-lg text-charcoal mb-2">{name}</h4>
+      <p className="font-sans text-sm text-slate leading-relaxed">{description}</p>
     </div>
   )
 }
@@ -73,10 +66,6 @@ export default function PrestationsTabs() {
           ))}
         </div>
 
-        <p className="mt-10 font-sans text-xs text-stone/50 text-center tracking-wide">
-          Les tarifs sont indicatifs et peuvent varier selon la longueur et l'epaisseur des
-          cheveux. Un devis precis est etabli lors de la consultation.
-        </p>
       </div>
     </section>
   )
