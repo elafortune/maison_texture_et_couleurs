@@ -17,7 +17,7 @@ export default function SoinsHero() {
         <div
           className="video-slowmo absolute inset-[-6%] bg-cover bg-center"
           style={{
-            backgroundImage: "url('/IMG_7567.jpeg')",
+            backgroundImage: "url('/IMG_7567.webp')",
             filter: 'blur(3px) brightness(0.62) saturate(0.80)',
           }}
         />

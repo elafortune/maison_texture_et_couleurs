@@ -70,7 +70,7 @@ export default function SalonPresentation() {
 
             {/* Titre */}
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-light leading-tight text-charcoal mb-4">
-              Un espace dédié<br />à votre beauté
+              Coiffeur spécialisé<br />textures & couleurs
             </h2>
 
             {/* Ligne animée qui se dessine */}
@@ -98,7 +98,7 @@ export default function SalonPresentation() {
             {/* Image Ken Burns — remplacer par <img src="..." className="ken-burns ..." /> */}
             <div
               className="ken-burns absolute inset-0 bg-cover bg-center"
-              style={{ backgroundImage: "url('/IMG_5923.jpeg')" }}
+              style={{ backgroundImage: "url('/IMG_5923.webp')" }}
               role="img"
               aria-label="Intérieur du salon Maison Texture & couleur"
             />

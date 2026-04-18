@@ -28,7 +28,7 @@ function SliderBA() {
       <div
         className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-[1.02]"
         style={{
-          backgroundImage: "url('/IMG_6005.jpeg')",
+          backgroundImage: "url('/IMG_6005.webp')",
           filter: 'saturate(1.25) brightness(1.04)',
         }}
       />
@@ -41,7 +41,7 @@ function SliderBA() {
         <div
           className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-[1.02]"
           style={{
-            backgroundImage: "url('/IMG_5974.jpeg')",
+            backgroundImage: "url('/IMG_5974.webp')",
             width: `${10000 / pos}%`,
             filter: 'saturate(0.55) brightness(0.82)',
           }}

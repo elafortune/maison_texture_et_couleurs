@@ -106,7 +106,7 @@ export default function PhilosophieSoin() {
               ref={imageRef}
               className="absolute inset-0 bg-cover bg-center"
               style={{
-                backgroundImage: "url('/IMG_5925.jpeg')",
+                backgroundImage: "url('/IMG_5925.webp')",
                 transform: 'scale(1.12)',
                 willChange: 'transform',
               }}

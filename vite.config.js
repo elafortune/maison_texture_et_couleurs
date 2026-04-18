@@ -2,10 +2,11 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import sitemap from 'vite-plugin-sitemap'
 
-export default defineConfig({
+export default defineConfig(({ isSsrBuild }) => ({
   plugins: [
     react(),
-    sitemap({
+    // Sitemap only during client build (not SSR pass)
+    !isSsrBuild && sitemap({
       hostname: 'https://maison-texture-et-couleurs.com',
       dynamicRoutes: ['/', '/prestations', '/soins'],
       changefreq: 'monthly',
@@ -16,7 +17,8 @@ export default defineConfig({
   build: {
     rollupOptions: {
       output: {
-        manualChunks: {
+        // manualChunks is incompatible with SSR (deps are external)
+        manualChunks: isSsrBuild ? undefined : {
           vendor: ['react', 'react-dom', 'react-router-dom'],
           ui: ['lucide-react'],
         },
@@ -24,4 +26,4 @@ export default defineConfig({
     },
     assetsInlineLimit: 4096,
   },
-})
+}))

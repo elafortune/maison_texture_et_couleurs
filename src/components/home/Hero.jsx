@@ -7,7 +7,7 @@ export default function Hero() {
       {/* Image immersive de fond — remplacer src par la vraie photo salon */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/IMG_5978.jpeg')" }}
+        style={{ backgroundImage: "url('/IMG_5978.webp')" }}
         role="img"
         aria-label="Intérieur du salon Maison Texture & couleur"
       />

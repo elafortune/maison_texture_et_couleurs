@@ -5,12 +5,12 @@ import { socialLinks } from '../../data/salonData'
 
 /* ── Photos avec aspect ratios variés pour effet Pinterest ── */
 const photos = [
-  { id: 1, img: '/IMG_7556.jpeg', label: 'Coupe précision', aspect: 'aspect-[3/4]',  parallax: true },
-  { id: 2, img: '/IMG_6097_3.png', label: 'Balayage soleil',  aspect: 'aspect-square',  parallax: false },
-  { id: 3, img: '/IMG_5926.jpeg', label: 'Coloration rousse', aspect: 'aspect-[2/3]', parallax: true },
-  { id: 4, img: '/coiffage_volume.jpeg', label: 'Coiffage volume', aspect: 'aspect-[4/3]',  parallax: false },
-  { id: 5, img: '/IMG_7180.jpeg', label: 'Soin brillance',  aspect: 'aspect-[3/4]',  parallax: false },
-  { id: 6, img: '/IMG_5405_2.jpeg', label: 'Lissage kératine', aspect: 'aspect-square', parallax: false },
+  { id: 1, img: '/IMG_7556.webp', label: 'Coupe précision', alt: 'Coupe précision cheveux bouclés Paris 9e — Maison Texture & Couleur', aspect: 'aspect-[3/4]', parallax: true },
+  { id: 2, img: '/IMG_6097_3.webp', label: 'Balayage soleil', alt: 'Balayage Curly Hair Painting Paris 9e — Maison Texture & Couleur', aspect: 'aspect-square', parallax: false },
+  { id: 3, img: '/IMG_5926.webp', label: 'Coloration rousse', alt: 'Coloration rousse sur-mesure salon Paris 9e — Maison Texture & Couleur', aspect: 'aspect-[2/3]', parallax: true },
+  { id: 4, img: '/coiffage_volume.webp', label: 'Coiffage volume', alt: 'Coiffage volume cheveux texturés Paris — Maison Texture & Couleur', aspect: 'aspect-[4/3]', parallax: false },
+  { id: 5, img: '/IMG_7180.webp', label: 'Soin brillance', alt: 'Soin Ybera brillance et nutrition capillaire Paris 9e — Maison Texture & Couleur', aspect: 'aspect-[3/4]', parallax: false },
+  { id: 6, img: '/IMG_5405_2.webp', label: 'Lissage kératine', alt: 'Lissage Ybera kératine cheveux frisés Paris — Maison Texture & Couleur', aspect: 'aspect-square', parallax: false },
 ]
 
 /* ── Slider Avant / Après ── */
@@ -40,7 +40,7 @@ function BeforeAfter() {
         onTouchMove={(e) => { e.preventDefault(); setPos(calcPos(e.touches[0].clientX)) }}
       >
         {/* Image APRÈS — fond complet */}
-        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/IMG_6005.jpeg')", filter: 'saturate(1.2) brightness(1.05)' }} />
+        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/IMG_6005.webp')", filter: 'saturate(1.2) brightness(1.05)' }} />
 
         {/* Image AVANT — clippée à gauche */}
         <div
@@ -50,7 +50,7 @@ function BeforeAfter() {
           <div
             className="absolute inset-0 bg-cover bg-center"
             style={{
-              backgroundImage: "url('/IMG_5974.jpeg')",
+              backgroundImage: "url('/IMG_5974.webp')",
               width: `${10000 / pos}%`,
               filter: 'saturate(0.6) brightness(0.85)',
             }}
@@ -160,7 +160,7 @@ export default function GalerieInspiration() {
                   <img
                     ref={isParallax ? (el) => { parallaxRef.current[pIdx] = el } : null}
                     src={photo.img}
-                    alt={`${photo.label} — Maison Texture & couleur`}
+                    alt={photo.alt}
                     className={`w-full h-full object-cover transition-transform duration-500 ${!isParallax ? 'group-hover:scale-105' : ''}`}
                     style={isParallax ? { transform: 'scale(1.12)', transformOrigin: 'center' } : {}}
                     loading="lazy"
