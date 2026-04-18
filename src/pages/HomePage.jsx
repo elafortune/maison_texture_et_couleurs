@@ -1,3 +1,4 @@
+import SEO from '../components/seo/SEO'
 import Hero from '../components/home/Hero'
 import SalonPresentation from '../components/home/SalonPresentation'
 import PrestationsPreview from '../components/home/PrestationsPreview'
@@ -9,6 +10,11 @@ import FAQSection from '../components/faq/FAQSection'
 export default function HomePage() {
   return (
     <>
+      <SEO
+        title="Maison Texture & Couleur — Salon de coiffure Paris 9e"
+        description="Salon expert en coupe, coloration et soins capillaires au cœur de Paris 9e. Prenez rendez-vous en ligne sur Planity. 50 rue de la Chaussée d'Antin."
+        canonical="/"
+      />
       {/* 1. Hero — Noir profond #1C1C1C */}
       <Hero />
       {/* 2. Identité — Vert canard foncé #1F3F3B */}

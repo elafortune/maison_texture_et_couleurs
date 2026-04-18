@@ -1,4 +1,4 @@
-import { CalendarDays, ShieldCheck, Clock } from 'lucide-react'
+import { CalendarDays, ShieldCheck, Clock, MapPin } from 'lucide-react'
 import { socialLinks } from '../../data/salonData'
 import useScrollReveal from '../../hooks/useScrollReveal'
 
@@ -79,6 +79,15 @@ export default function BookingCTA() {
             <p className="font-sans text-xs text-stone/35 tracking-[0.15em]">
               Confirmation instantanée via Planity · Sans engagement
             </p>
+            <a
+              href="https://maps.google.com/?q=50+rue+de+la+Chaussée+d'Antin+75009+Paris"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 font-sans text-xs text-stone/30 hover:text-stone/60 transition-colors tracking-wide"
+            >
+              <MapPin size={11} />
+              50 rue de la Chaussée d&apos;Antin · 75009 Paris
+            </a>
           </div>
 
           {/* 3 éléments rassurants */}

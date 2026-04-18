@@ -5,12 +5,12 @@ import { socialLinks } from '../../data/salonData'
 
 /* ── Photos avec aspect ratios variés pour effet Pinterest ── */
 const photos = [
-  { id: 1, img: 'https://images.unsplash.com/photo-1562322140-8baeececf3df?w=600&q=80', label: 'Coupe précision', aspect: 'aspect-[3/4]',  parallax: true },
-  { id: 2, img: 'https://images.unsplash.com/photo-1560869713-7d0a29430803?w=600&q=80', label: 'Balayage soleil',  aspect: 'aspect-square',  parallax: false },
-  { id: 3, img: 'https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=600&q=80', label: 'Coloration rousse', aspect: 'aspect-[2/3]', parallax: true },
-  { id: 4, img: 'https://images.unsplash.com/photo-1634449571010-02389ed0f9b0?w=600&q=80', label: 'Coiffage volume', aspect: 'aspect-[4/3]',  parallax: false },
-  { id: 5, img: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80', label: 'Soin brillance',  aspect: 'aspect-[3/4]',  parallax: false },
-  { id: 6, img: 'https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=600&q=80', label: 'Lissage kératine', aspect: 'aspect-square', parallax: false },
+  { id: 1, img: '/IMG_7556.jpeg', label: 'Coupe précision', aspect: 'aspect-[3/4]',  parallax: true },
+  { id: 2, img: '/IMG_6097_3.png', label: 'Balayage soleil',  aspect: 'aspect-square',  parallax: false },
+  { id: 3, img: '/IMG_5926.jpeg', label: 'Coloration rousse', aspect: 'aspect-[2/3]', parallax: true },
+  { id: 4, img: '/coiffage_volume.jpeg', label: 'Coiffage volume', aspect: 'aspect-[4/3]',  parallax: false },
+  { id: 5, img: '/IMG_7180.jpeg', label: 'Soin brillance',  aspect: 'aspect-[3/4]',  parallax: false },
+  { id: 6, img: '/IMG_5405_2.jpeg', label: 'Lissage kératine', aspect: 'aspect-square', parallax: false },
 ]
 
 /* ── Slider Avant / Après ── */
@@ -31,7 +31,7 @@ function BeforeAfter() {
       </p>
       <div
         ref={containerRef}
-        className="relative aspect-[16/7] overflow-hidden cursor-col-resize select-none bg-charcoal"
+        className="relative aspect-[16/9] overflow-hidden cursor-col-resize select-none bg-charcoal"
         onMouseDown={(e) => { isDragging.current = true; setPos(calcPos(e.clientX)) }}
         onMouseMove={(e) => { if (isDragging.current) setPos(calcPos(e.clientX)) }}
         onMouseUp={() => { isDragging.current = false }}
@@ -40,7 +40,7 @@ function BeforeAfter() {
         onTouchMove={(e) => { e.preventDefault(); setPos(calcPos(e.touches[0].clientX)) }}
       >
         {/* Image APRÈS — fond complet */}
-        <div className="absolute inset-0 bg-cover bg-center bg-[url('https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=900&q=80')]" style={{ filter: 'saturate(1.2) brightness(1.05)' }} />
+        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/IMG_6005.jpeg')", filter: 'saturate(1.2) brightness(1.05)' }} />
 
         {/* Image AVANT — clippée à gauche */}
         <div
@@ -50,8 +50,8 @@ function BeforeAfter() {
           <div
             className="absolute inset-0 bg-cover bg-center"
             style={{
-              backgroundImage: "url('https://images.unsplash.com/photo-1562322140-8baeececf3df?w=900&q=80')",
-              width: `${10000 / pos}%`, /* compense le clip pour garder l'image en pleine largeur */
+              backgroundImage: "url('/IMG_5974.jpeg')",
+              width: `${10000 / pos}%`,
               filter: 'saturate(0.6) brightness(0.85)',
             }}
           />

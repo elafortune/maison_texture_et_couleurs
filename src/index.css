@@ -63,13 +63,11 @@
     box-shadow: 0 24px 48px -10px rgba(0, 0, 0, 0.22);
   }
 
-  /* ── Image saturation au hover ── */
+  /* ── Image zoom au hover ── */
   .card-lift .card-img {
-    transition: filter 0.45s ease, transform 0.55s ease;
-    filter: saturate(0.85) brightness(0.97);
+    transition: transform 0.55s ease;
   }
   .card-lift:hover .card-img {
-    filter: saturate(1.25) brightness(1.02);
     transform: scale(1.06);
   }
 

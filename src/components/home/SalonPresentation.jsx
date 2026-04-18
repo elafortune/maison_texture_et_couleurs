@@ -98,7 +98,7 @@ export default function SalonPresentation() {
             {/* Image Ken Burns — remplacer par <img src="..." className="ken-burns ..." /> */}
             <div
               className="ken-burns absolute inset-0 bg-cover bg-center"
-              style={{ backgroundImage: "url('https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=800&q=80')" }}
+              style={{ backgroundImage: "url('/IMG_5923.jpeg')" }}
               role="img"
               aria-label="Intérieur du salon Maison Texture & couleur"
             />

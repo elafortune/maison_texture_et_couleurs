@@ -28,7 +28,7 @@ function SliderBA() {
       <div
         className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-[1.02]"
         style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=1200&q=80')",
+          backgroundImage: "url('/IMG_6005.jpeg')",
           filter: 'saturate(1.25) brightness(1.04)',
         }}
       />
@@ -41,7 +41,7 @@ function SliderBA() {
         <div
           className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-[1.02]"
           style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1562322140-8baeececf3df?w=1200&q=80')",
+            backgroundImage: "url('/IMG_5974.jpeg')",
             width: `${10000 / pos}%`,
             filter: 'saturate(0.55) brightness(0.82)',
           }}

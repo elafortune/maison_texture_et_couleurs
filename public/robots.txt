@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://maison-texture-et-couleurs.com/sitemap.xml

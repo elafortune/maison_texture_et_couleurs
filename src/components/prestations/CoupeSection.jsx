@@ -112,7 +112,7 @@ export default function CoupeSection() {
               ref={imageRef}
               className="absolute inset-0 bg-cover bg-center"
               style={{
-                backgroundImage: "url('https://images.unsplash.com/photo-1562322140-8baeececf3df?w=900&q=80')",
+                backgroundImage: "url('/IMG_5959.jpeg')",
                 transform: 'scale(1.12)',
                 willChange: 'transform',
               }}

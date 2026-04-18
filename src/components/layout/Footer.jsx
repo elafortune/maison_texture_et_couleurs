@@ -1,4 +1,4 @@
-import { Instagram, CalendarDays } from 'lucide-react'
+import { Instagram, CalendarDays, MapPin } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import TikTokIcon from '../ui/TikTokIcon'
 import { socialLinks } from '../../data/salonData'
@@ -11,10 +11,10 @@ export default function Footer() {
       <div className="absolute inset-0 noise-overlay" />
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 py-14 md:py-20">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 md:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-10 md:gap-6">
 
           {/* Brand */}
-          <div className="flex flex-col gap-4 md:col-span-1">
+          <div className="flex flex-col gap-4 md:col-span-2">
             <span className="font-serif text-2xl tracking-[0.12em] text-pearl">
               Maison<span className="gradient-text mx-1.5">&</span>Texture
             </span>
@@ -22,9 +22,11 @@ export default function Footer() {
               Salon de coiffure expert en coupes, couleurs et soins capillaires.
               Un espace où chaque cheveu est traité avec soin.
             </p>
-            <div className="flex items-center gap-2 mt-1">
-              <div className="w-4 h-px bg-terracotta/50" />
-              <span className="font-sans text-xs text-stone/30 tracking-widest uppercase">Paris 9e</span>
+            <div className="flex items-start gap-2 mt-1">
+              <div className="w-4 h-px bg-terracotta/50 mt-2 flex-shrink-0" />
+              <address className="font-sans text-xs text-stone/40 not-italic leading-relaxed">
+                50 rue de la Chaussée d&apos;Antin<br />75009 Paris
+              </address>
             </div>
           </div>
 
@@ -47,6 +49,29 @@ export default function Footer() {
                 {label}
               </Link>
             ))}
+          </div>
+
+          {/* Adresse */}
+          <div className="flex flex-col gap-3">
+            <span className="font-sans text-xs tracking-[0.2em] uppercase text-terracotta mb-1">
+              Nous trouver
+            </span>
+            <div className="flex items-start gap-2 text-stone/50">
+              <MapPin size={15} className="flex-shrink-0 mt-0.5 text-terracotta/60" />
+              <address className="font-sans text-sm not-italic leading-relaxed">
+                50 rue de la<br />
+                Chaussée d&apos;Antin<br />
+                75009 Paris
+              </address>
+            </div>
+            <a
+              href="https://maps.google.com/?q=50+rue+de+la+Chaussée+d'Antin+75009+Paris"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-sans text-xs text-stone/30 hover:text-copper transition-colors tracking-wide mt-1"
+            >
+              Voir sur Google Maps →
+            </a>
           </div>
 
           {/* Réservation */}

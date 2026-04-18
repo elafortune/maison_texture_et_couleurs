@@ -3,11 +3,13 @@ import { CalendarDays } from 'lucide-react'
 import Navbar from './Navbar'
 import Footer from './Footer'
 import ScrollToTop from './ScrollToTop'
+import JsonLd from '../seo/JsonLd'
 import { socialLinks } from '../../data/salonData'
 
 export default function Layout() {
   return (
     <>
+      <JsonLd />
       <ScrollToTop />
       <Navbar />
       <main className="pb-16 md:pb-0">

@@ -7,7 +7,7 @@ export default function Hero() {
       {/* Image immersive de fond — remplacer src par la vraie photo salon */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1562322140-8baeececf3df?w=1400&q=80')" }}
+        style={{ backgroundImage: "url('/IMG_5978.jpeg')" }}
         role="img"
         aria-label="Intérieur du salon Maison Texture & couleur"
       />
@@ -45,9 +45,17 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Indicateur de scroll */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-fade-in">
-        <div className="w-px h-10 bg-gradient-to-b from-copper/40 to-transparent" />
+      {/* Adresse + scroll */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 animate-fade-in">
+        <a
+          href="https://maps.google.com/?q=50+rue+de+la+Chaussée+d'Antin+75009+Paris"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-sans text-[11px] tracking-[0.22em] uppercase text-charcoal/45 hover:text-charcoal/70 transition-colors"
+        >
+          50 rue de la Chaussée d&apos;Antin · Paris 9e
+        </a>
+        <div className="w-px h-8 bg-gradient-to-b from-copper/40 to-transparent" />
       </div>
     </section>
   )

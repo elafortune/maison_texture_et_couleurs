@@ -32,7 +32,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link
           to="/"
-          className="font-serif text-lg md:text-xl tracking-[0.15em] text-onyx/90 hover:text-onyx transition-colors"
+          className="font-serif text-lg md:text-xl tracking-[0.15em] text-onyx hover:text-onyx transition-colors"
         >
           Maison Texture<span className="gradient-text mx-1.5">&</span>Couleurs
         </Link>
@@ -48,7 +48,7 @@ export default function Navbar() {
                 <a
                   key={label}
                   href={to}
-                  className="nav-link font-sans text-[13px] tracking-[0.18em] uppercase text-onyx/90 hover:text-copper transition-colors"
+                  className="nav-link font-sans text-[13px] tracking-[0.18em] uppercase text-onyx hover:text-copper transition-colors"
                 >
                   {label}
                 </a>
@@ -59,7 +59,7 @@ export default function Navbar() {
                 key={label}
                 to={to}
                 className={`nav-link font-sans text-[13px] tracking-[0.18em] uppercase transition-colors ${
-                  isActive ? 'text-copper active-link' : 'text-onyx/90 hover:text-copper'
+                  isActive ? 'text-copper active-link' : 'text-onyx hover:text-copper'
                 }`}
               >
                 {label}
@@ -123,7 +123,7 @@ export default function Navbar() {
                     key={label}
                     href={to}
                     onClick={() => setOpen(false)}
-                    className="font-sans text-sm tracking-[0.2em] uppercase text-stone/60 hover:text-pearl transition-colors"
+                    className="font-sans text-sm tracking-[0.2em] uppercase text-stone/85 hover:text-pearl transition-colors"
                   >
                     {label}
                   </a>
@@ -133,7 +133,7 @@ export default function Navbar() {
                 <Link
                   key={label}
                   to={to}
-                  className="font-sans text-sm tracking-[0.2em] uppercase text-stone/60 hover:text-pearl transition-colors"
+                  className="font-sans text-sm tracking-[0.2em] uppercase text-stone/85 hover:text-pearl transition-colors"
                 >
                   {label}
                 </Link>
