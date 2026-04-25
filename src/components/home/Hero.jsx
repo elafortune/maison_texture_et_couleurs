@@ -51,7 +51,7 @@ export default function Hero() {
           href="https://maps.google.com/?q=50+rue+de+la+Chaussée+d'Antin+75009+Paris"
           target="_blank"
           rel="noopener noreferrer"
-          className="font-sans text-[11px] tracking-[0.22em] uppercase text-charcoal/45 hover:text-charcoal/70 transition-colors"
+          className="font-sans text-[11px] tracking-[0.22em] uppercase text-charcoal/60 hover:text-charcoal/80 transition-colors"
         >
           50 rue de la Chaussée d&apos;Antin · Paris 9e
         </a>

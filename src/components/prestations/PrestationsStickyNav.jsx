@@ -51,7 +51,7 @@ export default function PrestationsStickyNav() {
             className={`relative flex-shrink-0 px-4 md:px-5 py-4 font-sans text-xs tracking-[0.14em] uppercase transition-colors duration-200 whitespace-nowrap group ${
               active === id
                 ? 'text-charcoal'
-                : 'text-slate/60 hover:text-charcoal'
+                : 'text-charcoal/55 hover:text-charcoal'
             }`}
           >
             {label}

@@ -106,19 +106,27 @@ export default function GalerieInspiration() {
     return () => observer.disconnect()
   }, [])
 
-  /* Micro-parallaxe sur les grandes images */
+  /* Micro-parallaxe — rAF pour éviter le forced reflow */
   useEffect(() => {
+    let rafId = null
     const handleScroll = () => {
-      parallaxRef.current.forEach((img) => {
-        if (!img) return
-        const rect = img.parentElement.getBoundingClientRect()
-        const offset = ((rect.top + rect.height / 2) - window.innerHeight / 2) * 0.06
-        img.style.transform = `translateY(${offset}px) scale(1.12)`
+      if (rafId) return
+      rafId = requestAnimationFrame(() => {
+        parallaxRef.current.forEach((img) => {
+          if (!img) return
+          const rect = img.parentElement.getBoundingClientRect()
+          const offset = ((rect.top + rect.height / 2) - window.innerHeight / 2) * 0.06
+          img.style.transform = `translateY(${offset}px) scale(1.12)`
+        })
+        rafId = null
       })
     }
     window.addEventListener('scroll', handleScroll, { passive: true })
     handleScroll()
-    return () => window.removeEventListener('scroll', handleScroll)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      if (rafId) cancelAnimationFrame(rafId)
+    }
   }, [])
 
   let parallaxIndex = 0

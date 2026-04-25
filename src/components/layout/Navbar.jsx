@@ -123,7 +123,7 @@ export default function Navbar() {
                     key={label}
                     href={to}
                     onClick={() => setOpen(false)}
-                    className="font-sans text-sm tracking-[0.2em] uppercase text-stone/85 hover:text-pearl transition-colors"
+                    className="font-sans text-sm tracking-[0.2em] uppercase text-pearl hover:text-copper transition-colors"
                   >
                     {label}
                   </a>
@@ -133,7 +133,7 @@ export default function Navbar() {
                 <Link
                   key={label}
                   to={to}
-                  className="font-sans text-sm tracking-[0.2em] uppercase text-stone/85 hover:text-pearl transition-colors"
+                  className="font-sans text-sm tracking-[0.2em] uppercase text-pearl hover:text-copper transition-colors"
                 >
                   {label}
                 </Link>
@@ -157,7 +157,7 @@ export default function Navbar() {
                 href={socialLinks.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-stone/50 hover:text-copper transition-colors"
+                className="text-pearl/75 hover:text-copper transition-colors"
                 aria-label="Instagram"
               >
                 <Instagram size={20} />
@@ -166,7 +166,7 @@ export default function Navbar() {
                 href={socialLinks.tiktok}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-stone/50 hover:text-copper transition-colors"
+                className="text-pearl/75 hover:text-copper transition-colors"
                 aria-label="TikTok"
               >
                 <TikTokIcon className="w-5 h-5" />
